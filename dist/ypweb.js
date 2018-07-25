@@ -38,6 +38,7 @@ function help() {
   console.log('    - ypweb config set <key> <value>');
   console.log('    - ypweb config remove <key>');
   console.log('    - ypweb config get <key>');
+  console.log('    - ypweb config list');
   console.log('    - ypweb config help');
   console.log();
 }

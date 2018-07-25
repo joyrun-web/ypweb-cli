@@ -13,7 +13,7 @@ export const dirs = {
 };
 
 export const defaults = {
-  registry   : 'vue-templates',
+  registry   : 'joyrun-web',
   type       : 'org', // ['org', 'user']
   metalsmith : true,
 };

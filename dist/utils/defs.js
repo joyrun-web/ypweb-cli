@@ -25,7 +25,7 @@ const dirs = exports.dirs = {
 };
 
 const defaults = exports.defaults = {
-  registry: 'vue-templates',
+  registry: 'joyrun-web',
   type: 'org', // ['org', 'user']
   metalsmith: true
 };
