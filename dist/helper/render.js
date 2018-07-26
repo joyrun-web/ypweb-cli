@@ -44,7 +44,7 @@ function render() {
           return next(err);
         }
 
-        files[file].contents = new Buffer.from(res);
+        files[file].contents = new Buffer(res);
         next();
       });
     });
