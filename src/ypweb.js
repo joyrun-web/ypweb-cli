@@ -4,10 +4,12 @@ import { version } from '../package.json'
 import { dirs, alias } from './utils/defs'
 import rc from './utils/rc'
 import inquirer from 'inquirer'
+import chalk from 'chalk'
 
 function help () {
   console.log('')
   console.log('  How to use:')
+  console.log(`  First run ${chalk.yellow('ypweb config')} to init config folder:`)
   console.log()
   console.log('    - ypweb install')
   console.log('    - ypweb init')

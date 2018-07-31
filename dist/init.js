@@ -4,55 +4,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _inquirer = require('inquirer');
-
-var _inquirer2 = _interopRequireDefault(_inquirer);
-
-var _rmfr = require('rmfr');
-
-var _rmfr2 = _interopRequireDefault(_rmfr);
-
-var _fs = require('mz/fs');
-
-var _path = require('path');
-
-var _defs = require('./utils/defs');
-
-var _rc = require('./utils/rc');
-
-var _rc2 = _interopRequireDefault(_rc);
-
-var _common = require('./utils/common');
-
-var _copy = require('./utils/copy');
-
-var _copy2 = _interopRequireDefault(_copy);
-
-var _loading = require('./utils/loading');
-
-var _loading2 = _interopRequireDefault(_loading);
-
-var _metal = require('./helper/metal');
-
-var _metal2 = _interopRequireDefault(_metal);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-exports.default = (() => {
+let apply = (() => {
   var _ref = _asyncToGenerator(function* () {
     const download = _defs.dirs.download;
     const root = process.cwd();
 
     if (!(yield (0, _fs.exists)(download))) {
-      logger.error(`There is no ${download}, Please install a template`);
+      _logger2.default.error(`There is no ${download}, Please run ${_chalk2.default.yellow('ypweb config')} to build download folder`);
     }
 
     const list = yield (0, _fs.readdir)(download);
 
     if (list.length === 0) {
-      logger.error(`There is no any scaffolds in your local folder ${download}, install it`);
+      _logger2.default.error(`There is no any scaffolds in your local folder ${download}, Please run ${_chalk2.default.yellow('ypweb install')} to install it`);
     }
 
     if (list[0] == '.DS_Store') {
@@ -148,9 +112,53 @@ exports.default = (() => {
     }
   });
 
-  function apply() {
+  return function apply() {
     return _ref.apply(this, arguments);
-  }
-
-  return apply;
+  };
 })();
+
+var _inquirer = require('inquirer');
+
+var _inquirer2 = _interopRequireDefault(_inquirer);
+
+var _rmfr = require('rmfr');
+
+var _rmfr2 = _interopRequireDefault(_rmfr);
+
+var _fs = require('mz/fs');
+
+var _path = require('path');
+
+var _defs = require('./utils/defs');
+
+var _rc = require('./utils/rc');
+
+var _rc2 = _interopRequireDefault(_rc);
+
+var _common = require('./utils/common');
+
+var _copy = require('./utils/copy');
+
+var _copy2 = _interopRequireDefault(_copy);
+
+var _loading = require('./utils/loading');
+
+var _loading2 = _interopRequireDefault(_loading);
+
+var _metal = require('./helper/metal');
+
+var _metal2 = _interopRequireDefault(_metal);
+
+var _logger = require('./utils/logger');
+
+var _logger2 = _interopRequireDefault(_logger);
+
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+exports.default = apply;

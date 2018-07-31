@@ -2,7 +2,7 @@
 A simple CLI for scaffold vue or react projects
 
 ### Installation
-Prerequisites: [Node.js](https://nodejs.org/en/) (>=8.x preferred), npm version 3+ and [Git](https://git-scm.com/).
+Prerequisites: [Node.js](https://nodejs.org/en/) (>=6.0.0, 8.x preferred), npm version 3+ and [Git](https://git-scm.com/).
 
 ``` bash
 $ npm install -g ypweb-cli

@@ -8,26 +8,27 @@ import { runBash, wrapperAsync, betterRequire } from './utils/common';
 import copy from './utils/copy';
 import loading from './utils/loading';
 import metal from './helper/metal';
+import logger from './utils/logger';
+import chalk from 'chalk';
 
-export default async function apply () {
+async function apply () {
   const download = dirs.download;
   const root = process.cwd();
 
   if (!await exists(download)) {
-    logger.error(`There is no ${download}, Please install a template`);
+    logger.error(`There is no ${download}, Please run ${chalk.yellow('ypweb config')} to build download folder`);
   }
 
   const list = await readdir(download);
 
   if (list.length === 0) {
-    logger.error(`There is no any scaffolds in your local folder ${download}, install it`);
+    logger.error(`There is no any scaffolds in your local folder ${download}, Please run ${chalk.yellow('ypweb install')} to install it`);
   }
 
   if (list[0] == '.DS_Store') {
     // 剔除.DS_Store目录
     list.splice(0, 1)
   }
-
 
   const answers = await inquirer.prompt([
     {
@@ -118,3 +119,5 @@ export default async function apply () {
     loader.succeed(`generated ${resolve(root, dir)}`);
   }
 }
+
+export default apply;

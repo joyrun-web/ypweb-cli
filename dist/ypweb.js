@@ -20,6 +20,10 @@ var _inquirer = require('inquirer');
 
 var _inquirer2 = _interopRequireDefault(_inquirer);
 
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -27,6 +31,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 function help() {
   console.log('');
   console.log('  How to use:');
+  console.log(`  First run ${_chalk2.default.yellow('ypweb config')} to init config folder:`);
   console.log();
   console.log('    - ypweb install');
   console.log('    - ypweb init');

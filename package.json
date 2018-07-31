@@ -1,6 +1,6 @@
 {
   "name": "ypweb-cli",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "A command line interface for vue and reactjs development",
   "repository": "https://github.com/joyrun-web/ypweb-cli.git",
   "author": "liyufan@thejoyrun.com",
