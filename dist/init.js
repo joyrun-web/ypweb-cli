@@ -81,6 +81,7 @@ let apply = (() => {
 
       // object, { ask.name: answer }
       reply = yield _inquirer2.default.prompt(ask);
+      reply.name = dir;
       loader = (0, _loading2.default)('generating', (0, _path.resolve)(root, dir));
       yield (0, _metal2.default)((0, _path.resolve)(download, scaffold), (0, _path.resolve)(root, dir), reply);
       // rm dest interfaces

@@ -85,6 +85,7 @@ async function apply () {
 
     // object, { ask.name: answer }
     reply = await inquirer.prompt(ask);
+    reply.name = dir
     loader = loading('generating', resolve(root, dir));
     await metal(
       resolve(download, scaffold),
