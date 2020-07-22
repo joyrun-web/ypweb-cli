@@ -3,7 +3,7 @@
   "version": "1.0.8",
   "description": "A command line interface for vue and reactjs development",
   "repository": "https://github.com/joyrun-web/ypweb-cli.git",
-  "author": "liyufan@thejoyrun.com",
+  "author": "liyufan_0322@163.com",
   "license": "ISC",
   "main": "index.js",
   "bin": {
